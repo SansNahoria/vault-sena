@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard · VaultSENA</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <div class="app-layout">
+
+    <!-- ==================== SIDEBAR ==================== -->
+    <aside class="sidebar">
+      <div class="brand">
+        <svg class="brand-mark" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="50" cy="38" r="22" stroke="currentColor" stroke-width="7"/>
+          <path d="M50 55 L38 85 H62 L50 55Z" stroke="currentColor" stroke-width="7" stroke-linejoin="round"/>
+        </svg>
+        <span class="brand-name">VaultSENA</span>
+      </div>
+
+      <ul class="nav-list">
+        <li>
+          <a href="dashboard.html" class="nav-link active">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg>
+            Dashboard
+          </a>
+        </li>
+        <li>
+          <a href="servicios.html" class="nav-link">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="8" cy="8" r="5"/><path d="M11.5 11.5L21 21M21 21v-5M21 21h-5"/></svg>
+            Mis servicios
+          </a>
+        </li>
+        <li>
+          <a href="perfil.html" class="nav-link">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.5-7 8-7s8 3 8 7"/></svg>
+            Mi perfil
+          </a>
+        </li>
+      </ul>
+
+      <div class="sidebar-footer">
+        <a href="login.html" class="nav-link" id="btnLogout">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 01-2-2V5a2 2 0 012-2h4"/><path d="M16 17l5-5-5-5"/><path d="M21 12H9"/></svg>
+          Cerrar sesión
+        </a>
+      </div>
+    </aside>
+
+    <!-- ==================== CONTENIDO ==================== -->
+    <main class="main-content">
+
+      <div class="page-header">
+        <div>
+          <h1 id="saludo">Hola, Juan 👋</h1>
+          <p class="subtitle">Este es el resumen de tu bóveda</p>
+        </div>
+        <a href="servicios.html" class="btn btn-primary">+ Nuevo servicio</a>
+      </div>
+
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-label">Servicios guardados</div>
+          <div class="stat-value accent" id="statTotal">6</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">Categoría más usada</div>
+          <div class="stat-value" id="statCategoria">Streaming</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">Último acceso</div>
+          <div class="stat-value" id="statUltimoAcceso" style="font-size:1.1rem;">Hoy, 9:40 a.m.</div>
+        </div>
+      </div>
+
+      <div class="panel">
+        <h2>Servicios recientes</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Servicio</th>
+              <th>Categoría</th>
+              <th>Contraseña</th>
+              <th>Agregado</th>
+            </tr>
+          </thead>
+          <tbody id="tablaRecientes">
+            <tr>
+              <td>
+                <div class="service-name-cell">
+                  <div class="service-icon">Ne</div>
+                  <span>Netflix</span>
+                </div>
+              </td>
+              <td><span class="badge">Streaming</span></td>
+              <td><span class="password-mask">••••••••</span></td>
+              <td>hace 2 días</td>
+            </tr>
+            <tr>
+              <td>
+                <div class="service-name-cell">
+                  <div class="service-icon">Gm</div>
+                  <span>Gmail</span>
+                </div>
+              </td>
+              <td><span class="badge">Correo</span></td>
+              <td><span class="password-mask">••••••••</span></td>
+              <td>hace 5 días</td>
+            </tr>
+            <tr>
+              <td>
+                <div class="service-name-cell">
+                  <div class="service-icon">Bc</div>
+                  <span>Bancolombia</span>
+                </div>
+              </td>
+              <td><span class="badge">Bancos</span></td>
+              <td><span class="password-mask">••••••••</span></td>
+              <td>hace 1 semana</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+    </main>
+  </div>
+
+  <script src="js/config.js"></script>
+  <script src="js/classes/ApiService.js"></script>
+  <script src="js/classes/Auth.js"></script>
+  <script src="js/classes/Usuario.js"></script>
+  <script src="js/classes/Servicio.js"></script>
+  <script src="js/classes/UI.js"></script>
+  <script src="js/auth-guard.js"></script>
+  <script src="js/dashboard.js"></script>
+</body>
+</html>

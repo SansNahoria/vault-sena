@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mis servicios · VaultSENA</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <div class="app-layout">
+
+    <!-- ==================== SIDEBAR ==================== -->
+    <aside class="sidebar">
+      <div class="brand">
+        <svg class="brand-mark" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="50" cy="38" r="22" stroke="currentColor" stroke-width="7"/>
+          <path d="M50 55 L38 85 H62 L50 55Z" stroke="currentColor" stroke-width="7" stroke-linejoin="round"/>
+        </svg>
+        <span class="brand-name">VaultSENA</span>
+      </div>
+
+      <ul class="nav-list">
+        <li>
+          <a href="dashboard.html" class="nav-link">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg>
+            Dashboard
+          </a>
+        </li>
+        <li>
+          <a href="servicios.html" class="nav-link active">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="8" cy="8" r="5"/><path d="M11.5 11.5L21 21M21 21v-5M21 21h-5"/></svg>
+            Mis servicios
+          </a>
+        </li>
+        <li>
+          <a href="perfil.html" class="nav-link">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.5-7 8-7s8 3 8 7"/></svg>
+            Mi perfil
+          </a>
+        </li>
+      </ul>
+
+      <div class="sidebar-footer">
+        <a href="login.html" class="nav-link" id="btnLogout">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 01-2-2V5a2 2 0 012-2h4"/><path d="M16 17l5-5-5-5"/><path d="M21 12H9"/></svg>
+          Cerrar sesión
+        </a>
+      </div>
+    </aside>
+
+    <!-- ==================== CONTENIDO ==================== -->
+    <main class="main-content">
+
+      <div class="page-header">
+        <div>
+          <h1>Mis servicios</h1>
+          <p class="subtitle">Administra las cuentas que guardaste en tu bóveda</p>
+        </div>
+        <button class="btn btn-primary" id="btnNuevoServicio">+ Nuevo servicio</button>
+      </div>
+
+      <div class="panel">
+        <div class="table-toolbar">
+          <input type="text" class="search-input" id="buscador" placeholder="Buscar servicio...">
+          <select class="filter-select" id="filtroCategoria">
+            <option value="">Todas las categorías</option>
+          </select>
+        </div>
+
+        <table>
+          <thead>
+            <tr>
+              <th>Servicio</th>
+              <th>Usuario / Correo</th>
+              <th>Categoría</th>
+              <th>Contraseña</th>
+              <th>Desbloqueo</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody id="tablaServicios">
+            <tr data-id="1">
+              <td>
+                <div class="service-name-cell">
+                  <div class="service-icon">Ne</div>
+                  <span>Netflix</span>
+                </div>
+              </td>
+              <td>juan.perez@correo.com</td>
+              <td><span class="badge">Streaming</span></td>
+              <td>
+                <span class="password-mask">••••••••</span>
+                <button class="icon-btn" title="Ver contraseña" data-action="ver">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7z"/><circle cx="12" cy="12" r="3"/></svg>
+                </button>
+              </td>
+              <td><span class="badge">PIN</span></td>
+              <td>
+                <div class="row-actions">
+                  <button class="icon-btn" title="Editar" data-action="editar">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+                  </button>
+                  <button class="icon-btn" title="Eliminar" data-action="eliminar">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18"/><path d="M8 6V4a2 2 0 012-2h4a2 2 0 012 2v2m3 0l-1 14a2 2 0 01-2 2H7a2 2 0 01-2-2L4 6"/></svg>
+                  </button>
+                </div>
+              </td>
+            </tr>
+            <tr data-id="2">
+              <td>
+                <div class="service-name-cell">
+                  <div class="service-icon">Dc</div>
+                  <span>Discord</span>
+                </div>
+              </td>
+              <td>juanp#4521</td>
+              <td><span class="badge">Redes Sociales</span></td>
+              <td>
+                <span class="password-mask">••••••••</span>
+                <button class="icon-btn" title="Ver contraseña" data-action="ver">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7z"/><circle cx="12" cy="12" r="3"/></svg>
+                </button>
+              </td>
+              <td><span class="badge">Pregunta</span></td>
+              <td>
+                <div class="row-actions">
+                  <button class="icon-btn" title="Editar" data-action="editar">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+                  </button>
+                  <button class="icon-btn" title="Eliminar" data-action="eliminar">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18"/><path d="M8 6V4a2 2 0 012-2h4a2 2 0 012 2v2m3 0l-1 14a2 2 0 01-2 2H7a2 2 0 01-2-2L4 6"/></svg>
+                  </button>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+        <!-- Se muestra solo si no hay servicios (oculto por ahora, lo activa JS en la Etapa 9) -->
+        <div class="empty-state hidden" id="estadoVacio">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="8" cy="8" r="5"/><path d="M11.5 11.5L21 21M21 21v-5M21 21h-5"/></svg>
+          <p>Todavía no has guardado ningún servicio.</p>
+          <button class="btn btn-primary btn-sm" id="btnNuevoServicioVacio">+ Agregar mi primer servicio</button>
+        </div>
+      </div>
+
+    </main>
+  </div>
+
+  <!-- ==================== MODAL: CREAR / EDITAR SERVICIO ==================== -->
+  <div class="modal-overlay" id="modalServicio">
+    <div class="modal">
+      <div class="modal-header">
+        <h2 id="modalServicioTitulo">Nuevo servicio</h2>
+        <button class="modal-close" data-close-modal="modalServicio">&times;</button>
+      </div>
+
+      <form id="formServicio" novalidate>
+        <div class="field">
+          <label for="nombreServicio">Nombre del servicio</label>
+          <input type="text" id="nombreServicio" placeholder="Ej: Netflix, Gmail, Steam..." required>
+        </div>
+
+        <div class="field-row">
+          <div class="field">
+            <label for="usuarioServicio">Usuario</label>
+            <input type="text" id="usuarioServicio" placeholder="Opcional">
+          </div>
+          <div class="field">
+            <label for="categoriaServicio">Categoría</label>
+            <select id="categoriaServicio" required>
+              <option value="">Selecciona...</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="correoServicio">Correo asociado</label>
+          <input type="email" id="correoServicio" placeholder="Opcional">
+        </div>
+
+        <div class="field">
+          <label for="passwordServicio">Contraseña</label>
+          <input type="password" id="passwordServicio" required>
+        </div>
+
+        <div class="field">
+          <label for="urlServicio">URL del servicio</label>
+          <input type="url" id="urlServicio" placeholder="https://...">
+        </div>
+
+        <div class="field">
+          <label for="notasServicio">Notas</label>
+          <textarea id="notasServicio" rows="2" placeholder="Opcional"></textarea>
+        </div>
+
+        <div class="field">
+          <label>Método de desbloqueo</label>
+          <div class="radio-group">
+            <div class="radio-option selected" data-metodo="pin">PIN de 4 dígitos</div>
+            <div class="radio-option" data-metodo="pregunta">Pregunta personal</div>
+          </div>
+        </div>
+
+        <div class="field" id="grupoPin">
+          <label for="pinServicio">PIN (4 dígitos)</label>
+          <input type="password" id="pinServicio" maxlength="4" inputmode="numeric" placeholder="0000">
+        </div>
+
+        <div class="field hidden" id="grupoPregunta">
+          <label for="preguntaServicio">Pregunta personal</label>
+          <input type="text" id="preguntaServicio" placeholder="Ej: ¿Nombre de tu primera mascota?">
+        </div>
+        <div class="field hidden" id="grupoRespuesta">
+          <label for="respuestaServicio">Respuesta</label>
+          <input type="text" id="respuestaServicio">
+        </div>
+
+        <div class="modal-actions">
+          <button type="button" class="btn btn-secondary" data-close-modal="modalServicio">Cancelar</button>
+          <button type="submit" class="btn btn-primary">Guardar servicio</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- ==================== MODAL: DESBLOQUEAR CONTRASEÑA ==================== -->
+  <div class="modal-overlay" id="modalDesbloqueo">
+    <div class="modal" style="max-width: 360px;">
+      <div class="modal-header">
+        <h2>Verificar identidad</h2>
+        <button class="modal-close" data-close-modal="modalDesbloqueo">&times;</button>
+      </div>
+
+      <div class="unlock-box">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 018 0v4"/></svg>
+        <p id="textoDesbloqueo">Ingresa el PIN de este servicio para ver la contraseña</p>
+
+        <div class="pin-inputs" id="pinInputsGroup">
+          <input type="password" maxlength="1" inputmode="numeric">
+          <input type="password" maxlength="1" inputmode="numeric">
+          <input type="password" maxlength="1" inputmode="numeric">
+          <input type="password" maxlength="1" inputmode="numeric">
+        </div>
+
+        <div class="field hidden" id="respuestaInputGroup" style="text-align:left;">
+          <label for="respuestaDesbloqueo">Tu respuesta</label>
+          <input type="text" id="respuestaDesbloqueo" placeholder="Escribe tu respuesta">
+        </div>
+
+        <div class="alert alert-error" id="alertDesbloqueo" style="text-align:left;"></div>
+
+        <button class="btn btn-primary" style="width:100%;" id="btnVerificar">Verificar</button>
+
+        <div class="revealed-password hidden" id="passwordRevelada"></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/config.js"></script>
+  <script src="js/classes/ApiService.js"></script>
+  <script src="js/classes/Auth.js"></script>
+  <script src="js/classes/Usuario.js"></script>
+  <script src="js/classes/Servicio.js"></script>
+  <script src="js/classes/UI.js"></script>
+  <script src="js/auth-guard.js"></script>
+  <script src="js/servicios.js"></script>
+</body>
+</html>

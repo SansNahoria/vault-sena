@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mi perfil · VaultSENA</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <div class="app-layout">
+
+    <!-- ==================== SIDEBAR ==================== -->
+    <aside class="sidebar">
+      <div class="brand">
+        <svg class="brand-mark" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="50" cy="38" r="22" stroke="currentColor" stroke-width="7"/>
+          <path d="M50 55 L38 85 H62 L50 55Z" stroke="currentColor" stroke-width="7" stroke-linejoin="round"/>
+        </svg>
+        <span class="brand-name">VaultSENA</span>
+      </div>
+
+      <ul class="nav-list">
+        <li>
+          <a href="dashboard.html" class="nav-link">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg>
+            Dashboard
+          </a>
+        </li>
+        <li>
+          <a href="servicios.html" class="nav-link">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="8" cy="8" r="5"/><path d="M11.5 11.5L21 21M21 21v-5M21 21h-5"/></svg>
+            Mis servicios
+          </a>
+        </li>
+        <li>
+          <a href="perfil.html" class="nav-link active">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.5-7 8-7s8 3 8 7"/></svg>
+            Mi perfil
+          </a>
+        </li>
+      </ul>
+
+      <div class="sidebar-footer">
+        <a href="login.html" class="nav-link" id="btnLogout">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 01-2-2V5a2 2 0 012-2h4"/><path d="M16 17l5-5-5-5"/><path d="M21 12H9"/></svg>
+          Cerrar sesión
+        </a>
+      </div>
+    </aside>
+
+    <!-- ==================== CONTENIDO ==================== -->
+    <main class="main-content">
+
+      <div class="page-header">
+        <div>
+          <h1>Mi perfil</h1>
+          <p class="subtitle">Administra los datos de tu cuenta</p>
+        </div>
+      </div>
+
+      <div class="profile-header">
+        <div class="avatar-circle" id="avatarIniciales">JP</div>
+        <div>
+          <h2 style="font-size:1.1rem;" id="perfilNombre">Juan Pérez</h2>
+          <p class="subtitle" style="margin-top:2px;" id="perfilCorreoTexto">juan.perez@correo.com</p>
+        </div>
+      </div>
+
+      <div class="panel">
+        <h2>Información personal</h2>
+
+        <div class="alert alert-success" id="alertPerfilExito">Perfil actualizado correctamente</div>
+
+        <form id="formPerfil" novalidate>
+          <div class="field-row">
+            <div class="field">
+              <label for="nombre">Nombre completo</label>
+              <input type="text" id="nombre" value="Juan Pérez" required>
+            </div>
+            <div class="field">
+              <label for="correo">Correo electrónico</label>
+              <input type="email" id="correo" value="juan.perez@correo.com" required>
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="fechaRegistro">Miembro desde</label>
+            <input type="text" id="fechaRegistro" value="12 de julio de 2026" disabled>
+          </div>
+
+          <button type="submit" class="btn btn-primary">Guardar cambios</button>
+        </form>
+      </div>
+
+      <div class="panel">
+        <h2>Cambiar contraseña</h2>
+        <form id="formPassword" novalidate>
+          <div class="field-row">
+            <div class="field">
+              <label for="passwordActual">Contraseña actual</label>
+              <input type="password" id="passwordActual" required>
+            </div>
+            <div class="field">
+              <label for="passwordNueva">Nueva contraseña</label>
+              <input type="password" id="passwordNueva" minlength="8" required>
+            </div>
+          </div>
+          <button type="submit" class="btn btn-secondary">Actualizar contraseña</button>
+        </form>
+      </div>
+
+      <div class="danger-zone">
+        <h2>Eliminar cuenta</h2>
+        <p>Esta acción es permanente. Se eliminarán todos tus servicios guardados y no se podrá deshacer.</p>
+        <button class="btn btn-danger" id="btnEliminarCuenta">Eliminar mi cuenta</button>
+      </div>
+
+    </main>
+  </div>
+
+  <script src="js/config.js"></script>
+  <script src="js/classes/ApiService.js"></script>
+  <script src="js/classes/Auth.js"></script>
+  <script src="js/classes/Usuario.js"></script>
+  <script src="js/classes/Servicio.js"></script>
+  <script src="js/classes/UI.js"></script>
+  <script src="js/auth-guard.js"></script>
+  <script src="js/perfil.js"></script>
+</body>
+</html>

@@ -8,4 +8,4 @@
 //   const API_URL = 'https://vault-sena-backend.up.railway.app/api';
 // ============================================================
 
-const API_URL = 'http://localhost:3000/api';
+const API_URL = 'https://vault-sena-production.up.railway.app/api';
